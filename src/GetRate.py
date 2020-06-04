@@ -19,7 +19,6 @@ def GetLatestRate(key):
     response = requests.get(url)
     data = json.loads(response.text)                #PARSELAMAK İÇİN VAR
     value = data                     #PARSELAYARAK KEY'İN DEĞERİNİ ALIYORUZ
-    print(type(value))
     return value                                    #TEK KUR DEĞERİ
 
 #API BENİ KISITLADIĞI İÇİN 5 GÜNLÜK BİR KISIMDAN ALIYORUZ
@@ -88,7 +87,6 @@ def CreateJsonForMonthly(symbol, sdate):
     Returns:
         [string] -- [URL]
     """
-    print(type(sdate))
     #URL = "http://data.fixer.io/api/"
     apikey = open("token.txt", "r").read()
     #URL = URL + str(sdate) + "?access_key=" + apikey + "&symbols=" + symbol

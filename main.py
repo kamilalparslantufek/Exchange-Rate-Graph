@@ -16,19 +16,17 @@ def AnimateLatest(i,key):
         i {[integer]} -- [number of calls?, it counts how many times it is called]
         key {[string]} -- [Key for ExchangeRate currency, EUR to KEY]
     """
-    print(type(i))
-    print(i)
     latest = gt.GetLatestRate(key)
     now = datetime.datetime.now().replace(microsecond=0)    #time without micro second
     latestval = latest['rates'][key]
     rate_vals.append(latestval)
     date_vals.append(now)
     plt.cla()
-    plt.plot_date(date_vals, rate_vals, marker="o", linestyle="-")
+    plt.plot_date(date_vals, rate_vals, marker="o", linestyle="-", label="EUR/USD")
     for x,y in zip(date_vals,rate_vals):
         label = "{rate}".format(rate=y)
         plt.annotate(label,(x,y))
-
+        plt.legend(loc="upper left")
 
 
 def StrToDateTime(array):
