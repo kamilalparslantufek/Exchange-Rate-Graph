@@ -73,7 +73,7 @@ def CreateJsonForSingleLatest(symbol):
         [string] -- [URL]
     """
     #urlbase = "http://data.fixer.io/api/latest"
-    apikey = open("apikey.txt", "r").read()
+    apikey = open("token.txt", "r").read()
     #URL = urlbase + "?access_key=" + apikey + "&symbols=" + symbol
     url ="http://data.fixer.io/api/latest?access_key={apikey}&symbols={symbol}".format(apikey=apikey, symbol=symbol)
     return url
@@ -90,7 +90,7 @@ def CreateJsonForMonthly(symbol, sdate):
     """
     print(type(sdate))
     #URL = "http://data.fixer.io/api/"
-    apikey = open("apikey.txt", "r").read()
+    apikey = open("token.txt", "r").read()
     #URL = URL + str(sdate) + "?access_key=" + apikey + "&symbols=" + symbol
     url = "http://data.fixer.io/api/{date}?access_key={apikey}&symbols={symbol}".format(date=str(sdate), apikey=apikey,symbol=symbol)
     return url

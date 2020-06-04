@@ -125,3 +125,4 @@ dmypy.json
 .pyre/
 apikey.txt
 .vscode/settings.json
+token.txt
